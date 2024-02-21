@@ -52,6 +52,8 @@ public class Main {
         System.out.println();
         phone.viewHistory();
 
+        System.out.println("This is just a final message");
+
 
     }
 }
