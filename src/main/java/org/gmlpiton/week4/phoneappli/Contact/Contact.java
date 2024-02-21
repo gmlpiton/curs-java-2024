@@ -1,4 +1,4 @@
-package org.gmlpiton.week4.phoneappli;
+package org.gmlpiton.week4.phoneappli.Contact;
 
 public class Contact {
     private String phoneNumber;
