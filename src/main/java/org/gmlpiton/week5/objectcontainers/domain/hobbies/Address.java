@@ -1,4 +1,4 @@
-package org.gmlpiton.week5.objectcontainers.domain;
+package org.gmlpiton.week5.objectcontainers.domain.hobbies;
 
 
 public class Address {
@@ -15,6 +15,10 @@ public class Address {
         country = COUNTRY;
         city = CITY;
     }
+
+    public Address(Country c) {
+        this.country = c.getCountry();
+        }
 
     public Address(String streetName, int streetNumber) {
         this();
