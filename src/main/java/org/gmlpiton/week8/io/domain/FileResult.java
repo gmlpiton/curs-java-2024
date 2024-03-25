@@ -1,4 +1,4 @@
-package org.gmlpiton.week8.io;
+package org.gmlpiton.week8.io.domain;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -38,14 +38,6 @@ public class FileResult {
     public static UserResult computeResultsFromResultLine(String result)
     {
         String[] fields = result.split(",");
-        int i;
-        for(i = 0; i < fields.length ; i++ )
-        {
-            System.out.println(fields[i]);
-
-        }
-
-        UserResult userResult = new UserResult(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5], fields[6]);
-        return userResult;
+        return new UserResult(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5], fields[6]);
     }
 }

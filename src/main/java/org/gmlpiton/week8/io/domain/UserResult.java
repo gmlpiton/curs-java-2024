@@ -1,6 +1,5 @@
-package org.gmlpiton.week8.io;
+package org.gmlpiton.week8.io.domain;
 
-import org.gmlpiton.week8.io.places.Place;
 import org.gmlpiton.week8.io.utils.PatternChecks;
 
 import java.util.Locale;
@@ -9,7 +8,7 @@ public class UserResult {
 
     private final static int ADDED_DELAY_PER_MISS = 10;
 
-    private String athleteNumber;
+    private final String athleteNumber;
     private String athleteName;
     private String country;
     private String time;
@@ -18,6 +17,7 @@ public class UserResult {
     private String thirdShooting;
 
     private int calculatedTimeInSeconds;
+    private int delayInSeconds;
 
     private Place place ;
 
@@ -40,8 +40,13 @@ public class UserResult {
         int noDelays = PatternChecks.checkCounts(firstShooting.toLowerCase(Locale.ROOT),"o");
         noDelays += PatternChecks.checkCounts(secondShooting.toLowerCase(Locale.ROOT),"o");
         noDelays += PatternChecks.checkCounts(thirdShooting.toLowerCase(Locale.ROOT),"o");
-        timeMinsSecs += ADDED_DELAY_PER_MISS *noDelays;
+        delayInSeconds = ADDED_DELAY_PER_MISS *noDelays;
+        timeMinsSecs += delayInSeconds;
         calculatedTimeInSeconds = timeMinsSecs;
+    }
+
+    public int getDelayInSeconds() {
+        return delayInSeconds;
     }
 
     public Place getPlace() {
@@ -55,11 +60,6 @@ public class UserResult {
     public int getCalculatedTime() {
         return calculatedTimeInSeconds;
     }
-
-    public void setCalculatedTime(int calculatedTime) {
-        this.calculatedTimeInSeconds = calculatedTime;
-    }
-
 
 
     public String getAthleteName() {
