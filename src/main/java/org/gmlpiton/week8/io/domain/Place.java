@@ -1,15 +1,12 @@
-package org.gmlpiton.week8.io.places;
+package org.gmlpiton.week8.io.domain;
 
 public enum Place {
     P1("Winner", 1),
     P2("Runner-up", 2),
     P3("Third Place", 3);
 
-    String placeName;
-    int place;
-
-    Place() {
-    }
+    final String placeName;
+    final int place;
 
     Place(final String placeName, final int place)
         {

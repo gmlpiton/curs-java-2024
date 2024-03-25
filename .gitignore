@@ -1,2 +1,11 @@
 target/
 .idea/
+src/main/java/org/gmlpiton/midterm/
+Shape.java
+curs-java-2024.iml
+src/main/java/org/gmlpiton/Dog.java
+src/main/java/org/gmlpiton/midterm.zip
+.gitignore
+src/main/java/org/gmlpiton/PatternTest.java
+
+

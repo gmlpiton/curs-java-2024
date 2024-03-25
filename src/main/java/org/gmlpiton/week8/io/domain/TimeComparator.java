@@ -1,6 +1,4 @@
-package org.gmlpiton.week8.io;
-
-import org.gmlpiton.week5.objectcontainers.domain.persons.Person;
+package org.gmlpiton.week8.io.domain;
 
 import java.util.Comparator;
 

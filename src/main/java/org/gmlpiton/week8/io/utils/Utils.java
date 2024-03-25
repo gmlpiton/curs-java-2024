@@ -1,8 +1,6 @@
 package org.gmlpiton.week8.io.utils;
 
-
-
-public class MyTime {
+public class Utils {
 
     public static String leftPad(String s, int len, String pad)
     {

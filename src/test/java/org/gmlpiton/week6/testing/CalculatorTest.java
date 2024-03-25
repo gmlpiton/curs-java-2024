@@ -35,7 +35,7 @@ class CalculatorTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-            "1 mm + 1 cm + 1 dm + 1 m , 1111, mm",
+            "1 mn + 1 cm + 1 dm + 1 m , 1111, mm",
             "1 mm + 1 cm , 11, mm",
             "1 cm + 1 dm, 11, cm ",
             "1 dm + 1 m, 11, dm ",
