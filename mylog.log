@@ -1,6 +1,0 @@
-avr. 03, 2024 10:11:30 PM org.gmlpiton.week9.exceptlog.Main getLogger
-INFO: Getting logger
-avr. 03, 2024 10:11:30 PM org.gmlpiton.week9.exceptlog.Main main
-INFO: Start from main 
-avr. 03, 2024 10:11:30 PM org.gmlpiton.week9.exceptlog.Main main
-SEVERE: org.gmlpiton.week9.exceptlog.exception.InvalidCNPFormatException: CNP is not valid

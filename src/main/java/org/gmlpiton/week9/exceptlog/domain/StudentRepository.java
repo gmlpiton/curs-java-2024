@@ -1,6 +1,5 @@
 package org.gmlpiton.week9.exceptlog.domain;
 
-import org.gmlpiton.week8.io.domain.TimeComparator;
 import org.gmlpiton.week9.exceptlog.exception.ValidationException;
 
 import java.time.LocalDate;
@@ -26,7 +25,7 @@ public class StudentRepository {
 
     public int calculateAge(Student s) {
 
-        LocalDate bd = LocalDate.of(s.getDataOfBirth().getYear(), s.getDataOfBirth().getMonth(), s.getDataOfBirth().getDay());
+        LocalDate bd = LocalDate.of(s.getDateOfBirth().getYear(), s.getDateOfBirth().getMonth(), s.getDateOfBirth().getDay());
         LocalDate now = LocalDate.now();
         Period period = Period.between(bd, LocalDate.now());
         int age = period.getYears();
