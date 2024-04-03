@@ -1,6 +1,9 @@
 package org.gmlpiton.week9.exceptlog.domain;
 
+import org.gmlpiton.week8.io.domain.Place;
+
 import java.util.Locale;
+import java.util.Objects;
 
 public enum Gender {
     M("Male", "M"),
@@ -30,6 +33,15 @@ public enum Gender {
         }
         return validInput.toString().toUpperCase(Locale.ROOT).substring(0, validInput.toString().length() - 1 );
 
+    }
+
+    public static Gender getForValue(String ggender){
+        for (Gender gender: Gender.values()){
+            if(Objects.equals(gender.getGenderShortName(), ggender.toUpperCase())){
+                return gender;
+            }
+        }
+        return null;
     }
 
 

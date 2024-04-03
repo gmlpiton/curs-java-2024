@@ -44,7 +44,7 @@ public class Main {
         }
         Student student2= new Student("Ada", "Brown", 2003, 2, 11, "f", "8200302112557");
         Student student3= new Student("Iain", "Foster", 2003, 1, 11, "f", "7200302112557");
-        Student student4= new Student("Iain", "Idol", 2028, 1, 11, "f", "7200302112557");
+        Student student4= new Student("Iain", "Idol", 2000, 1, 11, "f", "7200302112557");
         System.out.println(student1);
         System.out.println(student2);
 
@@ -58,6 +58,8 @@ public class Main {
         System.out.println("All students of 21 are" + sr.getAllStudentsAgeX(21));
 
         sr.listStudents();
+
+        //Student student5= new Student("Iain", "Idol", 1899, 1, 11, "f", "7200302112557");
 
        // System.out.println(sr.calculateAge(sr.getSr().get(0)));
 

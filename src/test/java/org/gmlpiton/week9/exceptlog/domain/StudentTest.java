@@ -22,24 +22,27 @@ class StudentTest {
         assertEquals(s.getLastName(), ln);
         assertEquals(s.getFirstName(), fn);
         assertEquals(s.getCNP().toString(), cnp);
-        assertEquals(s.getDataOfBirth().getDay(), dd);
-        assertEquals(s.getDataOfBirth().getYear(), yy);
-        assertEquals(s.getDataOfBirth().getMonth(), mm);
+        assertEquals(s.getDateOfBirth().getDay(), dd);
+        assertEquals(s.getDateOfBirth().getYear(), yy);
+        assertEquals(s.getDateOfBirth().getMonth(), mm);
 
     }
 
 
     @Test
-    void ageTesting() {
-
-        Student student4 = new Student("Iain", "Idol", 2028, 1, 11, "f", "7200302112557");
-        StudentRepository sr = new StudentRepository();
-        sr.addStudent(student4);
-
+    void ageTestingGreater() {
 
         Exception exception = assertThrows(ValidationException.class, () ->
-                sr.getAllStudentsAgeX(21));
-        assertEquals("Age is too little: -3", exception.getMessage());
+                new Student("Iain", "Idol", 3028, 1, 11, "f", "7200302112557"));
+        assertEquals("Year 3028 is not valid", exception.getMessage()); //put 3028 to avoid fail any time soon
+    }
+
+    @Test
+    void ageTestingSmaller() {
+
+        Exception exception = assertThrows(ValidationException.class, () ->
+                new Student("Iain", "Idol", 1899, 1, 11, "f", "7200302112557"));
+        assertEquals("Year 1899 is not valid", exception.getMessage());
     }
 
 
@@ -47,7 +50,34 @@ class StudentTest {
     void CnpTesting() {
 
         Exception exception = assertThrows(InvalidCNPFormatException.class, () ->
-                new Student("Iain", "Idol", 2028, 1, 11, "f", "720030211"));
+                new Student("Iain", "Idol", 2001, 1, 11, "f", "720030211"));
         assertEquals("CNP is not valid", exception.getMessage());
     }
+    @Test
+    void genderNOKTestSuccess() {
+
+        Exception exception = assertThrows(ValidationException.class, () ->
+                new Student("Iain", "Idol", 2002, 1, 11, "x", "7200302112557"));
+        assertEquals("Gender is not valid", exception.getMessage());
+    }
+
+    @Test
+    void lastNameNullTestSuccess() {
+
+        Exception exception = assertThrows(ValidationException.class, () ->
+                new Student("Iain", "", 2002, 1, 11, "x", "7200302112557"));
+        assertEquals("Last name is empty", exception.getMessage());
+    }
+
+    @Test
+    void firstNameNullTestSuccess() {
+
+        Exception exception = assertThrows(ValidationException.class, () ->
+                new Student("", "Idol", 2002, 1, 11, "x", "7200302112557"));
+        assertEquals("First name is empty", exception.getMessage());
+    }
+
 }
+
+
+
