@@ -1,5 +1,7 @@
 package org.gmlpiton.week11;
 
+import org.gmlpiton.week8.io.domain.Place;
+
 public enum TicketType {
     TT1("full", 1, "full"),
     TT2("free", 2, "free"),
@@ -28,6 +30,15 @@ public enum TicketType {
 
     public int getId() {
         return id;
+    }
+
+    public static TicketType getForValue(int pid){
+        for (TicketType tt: TicketType.values()){
+            if(tt.getId() == pid){
+                return tt;
+            }
+        }
+        return null;
     }
 
     @Override
